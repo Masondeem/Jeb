@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeb the Dinosaur</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      cursor: pointer;
+      border: 5px solid #333;
+      border-radius: 10px;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <img id="dino" src="" alt="Click for Jeb" onclick="changeDino()" />
+  <h1>Jeb</h1>
+
+  <script>
+    const images = [
+      "https://upload.wikimedia.org/wikipedia/commons/1/10/Dinosaur_-_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3d/Triceratops_mounted_skeleton_NHMU.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/Tyrannosaurus_Rex_Holotype.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/Stegosaurus_Stenops.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b7/Parasaurolophus_walking.png"
+    ];
+
+    function changeDino() {
+      const dinoImg = document.getElementById('dino');
+      const randomIndex = Math.floor(Math.random() * images.length);
+      dinoImg.src = images[randomIndex];
+    }
+
+    window.onload = changeDino;
+  </script>
+</body>
+</html>

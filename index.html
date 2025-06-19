@@ -32,3 +32,30 @@
 </head>
 <body>
   <img id="dino" src="Dino1.png" alt="Click for Jeb" onclick="changeDino()" />
+  <h1>Jeb</h1>
+
+  <script>
+    const images = [
+      "Dino1.png",
+      "Dino2.png",
+      "Dino3.png",
+      "Dino4.png",
+      "Dino5.png",
+      "Dino6.png",
+      "Dino7.png",
+      "Dino8.png",
+      "Dino9.png",
+      "Dino10.png",
+      "Dino11.png"
+    ];
+
+    function changeDino() {
+      const dinoImg = document.getElementById('dino');
+      const randomIndex = Math.floor(Math.random() * images.length);
+      dinoImg.src = images[randomIndex];
+    }
+
+    window.onload = changeDino;
+  </script>
+</body>
+</html>
